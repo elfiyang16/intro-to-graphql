@@ -23,6 +23,7 @@ type Product {
   bikeType: BikeType
 }
 
+
 input NewProductInput {
   name: String!
   price: Float!
