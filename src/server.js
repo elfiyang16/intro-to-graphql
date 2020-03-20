@@ -11,11 +11,11 @@ const types = ['product', 'coupon', 'user']
 
 export const start = async () => {
   const rootSchema = `
-    schema {
-      query: Query
-      mutation: Mutation
-    }
-  `
+schema {
+  query: Query
+  mutation: Mutation
+}
+`
   const schemaTypes = await Promise.all(types.map(loadTypeSchema))
 
   const server = new ApolloServer({

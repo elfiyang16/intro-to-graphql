@@ -11,17 +11,42 @@ enum BikeType {
   BEACH
 }
 
-type Product {
+interface Product {
   name: String!
   price: Float!
   image: String!
-  type: ProductType!
+  createdBy: User!
+  productType: ProductType!
+  description: String
+}
+
+type GamingPc implements Product {
+    name: String!
+  price: Float!
+  image: String!
   createdBy: User!
   description: String
-  liquidCooled: Boolean
-  range: String
-  bikeType: BikeType
+  liquidCooled: Boolean!
 }
+
+type Bike implements Product{
+    name: String!
+  price: Float!
+  image: String!
+  createdBy: User!
+  description: String
+  bikeType: BikeType!
+}
+
+type Drone implements Product{
+    name: String!
+  price: Float!
+  image: String!
+  createdBy: User!
+  description: String
+  range: String!
+}
+
 
 input NewProductInput {
   name: String!
